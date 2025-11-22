@@ -1,0 +1,708 @@
+desc: (none)
+cmd: ./matching
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=155540
+mem_heap_B=256
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=156037
+mem_heap_B=512
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=266611
+mem_heap_B=528
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=267043
+mem_heap_B=560
+mem_heap_extra_B=40
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=267477
+mem_heap_B=592
+mem_heap_extra_B=56
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=267697
+mem_heap_B=608
+mem_heap_extra_B=64
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=268135
+mem_heap_B=640
+mem_heap_extra_B=80
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=268378
+mem_heap_B=1664
+mem_heap_extra_B=88
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=277148
+mem_heap_B=1680
+mem_heap_extra_B=96
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=277477
+mem_heap_B=1680
+mem_heap_extra_B=96
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=277806
+mem_heap_B=1680
+mem_heap_extra_B=96
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=278304
+mem_heap_B=1664
+mem_heap_extra_B=88
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=286606
+mem_heap_B=1680
+mem_heap_extra_B=96
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=286966
+mem_heap_B=1680
+mem_heap_extra_B=96
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1680 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x4027D71: std::sync::poison::once::Once::call_once_force::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+  n1: 1024 0x4006AB3: std::sys::sync::once::futex::Once::call (in /home/rye/code/rust/hello_world/matching)
+   n1: 1024 0x4006561: std::sync::once_lock::OnceLock<T>::initialize (in /home/rye/code/rust/hello_world/matching)
+    n1: 1024 0x4025343: std::io::stdio::_print (in /home/rye/code/rust/hello_world/matching)
+     n1: 1024 0x4008BFF: matching::main (in /home/rye/code/rust/hello_world/matching)
+      n1: 1024 0x4007CA2: core::ops::function::FnOnce::call_once (in /home/rye/code/rust/hello_world/matching)
+       n1: 1024 0x4007B85: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rye/code/rust/hello_world/matching)
+        n1: 1024 0x4007B68: std::rt::lang_start::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+         n1: 1024 0x402364F: std::rt::lang_start_internal (in /home/rye/code/rust/hello_world/matching)
+          n1: 1024 0x4007B50: std::rt::lang_start (in /home/rye/code/rust/hello_world/matching)
+           n0: 1024 0x4008F04: main (in /home/rye/code/rust/hello_world/matching)
+ n1: 512 0x493771B: ??? (in /usr/lib/libgcc_s.so.1)
+  n2: 512 0x4937BF1: ??? (in /usr/lib/libgcc_s.so.1)
+   n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+    n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+   n1: 256 0x49393C9: __register_frame_info_bases (in /usr/lib/libgcc_s.so.1)
+    n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+     n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+ n1: 144 0x400801B: alloc::alloc::alloc (in /home/rye/code/rust/hello_world/matching)
+  n1: 144 0x40080B5: alloc::alloc::Global::alloc_impl (in /home/rye/code/rust/hello_world/matching)
+   n3: 144 0x4007F92: alloc::alloc::exchange_malloc (in /home/rye/code/rust/hello_world/matching)
+    n2: 64 0x40085FB: matching::append (in /home/rye/code/rust/hello_world/matching)
+     n2: 48 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+      n1: 32 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+       n0: 32 in 2 places, all below massif's threshold (1.00%)
+      n0: 16 in 1 place, below massif's threshold (1.00%)
+     n0: 16 in 1 place, below massif's threshold (1.00%)
+    n0: 48 in 8 places, all below massif's threshold (1.00%)
+    n1: 32 0x4008390: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+     n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+      n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+       n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+        n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+         n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+          n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+           n0: 32 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=15
+#-----------
+time=287415
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=peak
+n3: 1696 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x4027D71: std::sync::poison::once::Once::call_once_force::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+  n1: 1024 0x4006AB3: std::sys::sync::once::futex::Once::call (in /home/rye/code/rust/hello_world/matching)
+   n1: 1024 0x4006561: std::sync::once_lock::OnceLock<T>::initialize (in /home/rye/code/rust/hello_world/matching)
+    n1: 1024 0x4025343: std::io::stdio::_print (in /home/rye/code/rust/hello_world/matching)
+     n1: 1024 0x4008BFF: matching::main (in /home/rye/code/rust/hello_world/matching)
+      n1: 1024 0x4007CA2: core::ops::function::FnOnce::call_once (in /home/rye/code/rust/hello_world/matching)
+       n1: 1024 0x4007B85: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rye/code/rust/hello_world/matching)
+        n1: 1024 0x4007B68: std::rt::lang_start::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+         n1: 1024 0x402364F: std::rt::lang_start_internal (in /home/rye/code/rust/hello_world/matching)
+          n1: 1024 0x4007B50: std::rt::lang_start (in /home/rye/code/rust/hello_world/matching)
+           n0: 1024 0x4008F04: main (in /home/rye/code/rust/hello_world/matching)
+ n1: 512 0x493771B: ??? (in /usr/lib/libgcc_s.so.1)
+  n2: 512 0x4937BF1: ??? (in /usr/lib/libgcc_s.so.1)
+   n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+    n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+   n1: 256 0x49393C9: __register_frame_info_bases (in /usr/lib/libgcc_s.so.1)
+    n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+     n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+ n1: 160 0x400801B: alloc::alloc::alloc (in /home/rye/code/rust/hello_world/matching)
+  n1: 160 0x40080B5: alloc::alloc::Global::alloc_impl (in /home/rye/code/rust/hello_world/matching)
+   n3: 160 0x4007F92: alloc::alloc::exchange_malloc (in /home/rye/code/rust/hello_world/matching)
+    n2: 80 0x40085FB: matching::append (in /home/rye/code/rust/hello_world/matching)
+     n2: 48 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+      n1: 32 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+       n0: 32 in 2 places, all below massif's threshold (1.00%)
+      n0: 16 in 1 place, below massif's threshold (1.00%)
+     n0: 32 in 2 places, all below massif's threshold (1.00%)
+    n0: 48 in 8 places, all below massif's threshold (1.00%)
+    n1: 32 0x4008390: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+     n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+      n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+       n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+        n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+         n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+          n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+           n0: 32 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=16
+#-----------
+time=288003
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=288332
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=288775
+mem_heap_B=1680
+mem_heap_extra_B=96
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=289123
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1696 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x4027D71: std::sync::poison::once::Once::call_once_force::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+  n1: 1024 0x4006AB3: std::sys::sync::once::futex::Once::call (in /home/rye/code/rust/hello_world/matching)
+   n1: 1024 0x4006561: std::sync::once_lock::OnceLock<T>::initialize (in /home/rye/code/rust/hello_world/matching)
+    n1: 1024 0x4025343: std::io::stdio::_print (in /home/rye/code/rust/hello_world/matching)
+     n1: 1024 0x4008BFF: matching::main (in /home/rye/code/rust/hello_world/matching)
+      n1: 1024 0x4007CA2: core::ops::function::FnOnce::call_once (in /home/rye/code/rust/hello_world/matching)
+       n1: 1024 0x4007B85: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rye/code/rust/hello_world/matching)
+        n1: 1024 0x4007B68: std::rt::lang_start::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+         n1: 1024 0x402364F: std::rt::lang_start_internal (in /home/rye/code/rust/hello_world/matching)
+          n1: 1024 0x4007B50: std::rt::lang_start (in /home/rye/code/rust/hello_world/matching)
+           n0: 1024 0x4008F04: main (in /home/rye/code/rust/hello_world/matching)
+ n1: 512 0x493771B: ??? (in /usr/lib/libgcc_s.so.1)
+  n2: 512 0x4937BF1: ??? (in /usr/lib/libgcc_s.so.1)
+   n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+    n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+   n1: 256 0x49393C9: __register_frame_info_bases (in /usr/lib/libgcc_s.so.1)
+    n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+     n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+ n1: 160 0x400801B: alloc::alloc::alloc (in /home/rye/code/rust/hello_world/matching)
+  n1: 160 0x40080B5: alloc::alloc::Global::alloc_impl (in /home/rye/code/rust/hello_world/matching)
+   n3: 160 0x4007F92: alloc::alloc::exchange_malloc (in /home/rye/code/rust/hello_world/matching)
+    n2: 112 0x40085FB: matching::append (in /home/rye/code/rust/hello_world/matching)
+     n2: 80 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+      n1: 48 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+       n0: 48 in 3 places, all below massif's threshold (1.00%)
+      n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 32 in 2 places, all below massif's threshold (1.00%)
+    n1: 32 0x4008390: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+     n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+      n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+       n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+        n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+         n0: 32 in 2 places, all below massif's threshold (1.00%)
+    n0: 16 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=20
+#-----------
+time=289452
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=289781
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=290224
+mem_heap_B=1680
+mem_heap_extra_B=96
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=290606
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=290935
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1696 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x4027D71: std::sync::poison::once::Once::call_once_force::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+  n1: 1024 0x4006AB3: std::sys::sync::once::futex::Once::call (in /home/rye/code/rust/hello_world/matching)
+   n1: 1024 0x4006561: std::sync::once_lock::OnceLock<T>::initialize (in /home/rye/code/rust/hello_world/matching)
+    n1: 1024 0x4025343: std::io::stdio::_print (in /home/rye/code/rust/hello_world/matching)
+     n1: 1024 0x4008BFF: matching::main (in /home/rye/code/rust/hello_world/matching)
+      n1: 1024 0x4007CA2: core::ops::function::FnOnce::call_once (in /home/rye/code/rust/hello_world/matching)
+       n1: 1024 0x4007B85: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rye/code/rust/hello_world/matching)
+        n1: 1024 0x4007B68: std::rt::lang_start::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+         n1: 1024 0x402364F: std::rt::lang_start_internal (in /home/rye/code/rust/hello_world/matching)
+          n1: 1024 0x4007B50: std::rt::lang_start (in /home/rye/code/rust/hello_world/matching)
+           n0: 1024 0x4008F04: main (in /home/rye/code/rust/hello_world/matching)
+ n1: 512 0x493771B: ??? (in /usr/lib/libgcc_s.so.1)
+  n2: 512 0x4937BF1: ??? (in /usr/lib/libgcc_s.so.1)
+   n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+    n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+   n1: 256 0x49393C9: __register_frame_info_bases (in /usr/lib/libgcc_s.so.1)
+    n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+     n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+ n1: 160 0x400801B: alloc::alloc::alloc (in /home/rye/code/rust/hello_world/matching)
+  n1: 160 0x40080B5: alloc::alloc::Global::alloc_impl (in /home/rye/code/rust/hello_world/matching)
+   n2: 160 0x4007F92: alloc::alloc::exchange_malloc (in /home/rye/code/rust/hello_world/matching)
+    n2: 144 0x40085FB: matching::append (in /home/rye/code/rust/hello_world/matching)
+     n2: 112 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+      n3: 80 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+       n1: 32 0x4008447: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+        n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+         n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+          n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+           n0: 32 in 2 places, all below massif's threshold (1.00%)
+       n1: 32 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+        n0: 32 in 2 places, all below massif's threshold (1.00%)
+       n0: 16 in 1 place, below massif's threshold (1.00%)
+      n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 32 in 2 places, all below massif's threshold (1.00%)
+    n0: 16 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=25
+#-----------
+time=291264
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=291593
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=292036
+mem_heap_B=1680
+mem_heap_extra_B=96
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=292452
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=292781
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1696 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x4027D71: std::sync::poison::once::Once::call_once_force::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+  n1: 1024 0x4006AB3: std::sys::sync::once::futex::Once::call (in /home/rye/code/rust/hello_world/matching)
+   n1: 1024 0x4006561: std::sync::once_lock::OnceLock<T>::initialize (in /home/rye/code/rust/hello_world/matching)
+    n1: 1024 0x4025343: std::io::stdio::_print (in /home/rye/code/rust/hello_world/matching)
+     n1: 1024 0x4008BFF: matching::main (in /home/rye/code/rust/hello_world/matching)
+      n1: 1024 0x4007CA2: core::ops::function::FnOnce::call_once (in /home/rye/code/rust/hello_world/matching)
+       n1: 1024 0x4007B85: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rye/code/rust/hello_world/matching)
+        n1: 1024 0x4007B68: std::rt::lang_start::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+         n1: 1024 0x402364F: std::rt::lang_start_internal (in /home/rye/code/rust/hello_world/matching)
+          n1: 1024 0x4007B50: std::rt::lang_start (in /home/rye/code/rust/hello_world/matching)
+           n0: 1024 0x4008F04: main (in /home/rye/code/rust/hello_world/matching)
+ n1: 512 0x493771B: ??? (in /usr/lib/libgcc_s.so.1)
+  n2: 512 0x4937BF1: ??? (in /usr/lib/libgcc_s.so.1)
+   n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+    n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+   n1: 256 0x49393C9: __register_frame_info_bases (in /usr/lib/libgcc_s.so.1)
+    n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+     n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+ n1: 160 0x400801B: alloc::alloc::alloc (in /home/rye/code/rust/hello_world/matching)
+  n1: 160 0x40080B5: alloc::alloc::Global::alloc_impl (in /home/rye/code/rust/hello_world/matching)
+   n2: 160 0x4007F92: alloc::alloc::exchange_malloc (in /home/rye/code/rust/hello_world/matching)
+    n2: 144 0x40085FB: matching::append (in /home/rye/code/rust/hello_world/matching)
+     n2: 112 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+      n2: 80 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+       n2: 48 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+        n1: 32 0x4008447: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+         n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+          n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+           n0: 32 in 2 places, all below massif's threshold (1.00%)
+        n0: 16 in 2 places, all below massif's threshold (1.00%)
+       n0: 32 in 2 places, all below massif's threshold (1.00%)
+      n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 32 in 2 places, all below massif's threshold (1.00%)
+    n0: 16 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=30
+#-----------
+time=293110
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=293439
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=293768
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=294211
+mem_heap_B=1680
+mem_heap_extra_B=96
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=294661
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1696 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x4027D71: std::sync::poison::once::Once::call_once_force::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+  n1: 1024 0x4006AB3: std::sys::sync::once::futex::Once::call (in /home/rye/code/rust/hello_world/matching)
+   n1: 1024 0x4006561: std::sync::once_lock::OnceLock<T>::initialize (in /home/rye/code/rust/hello_world/matching)
+    n1: 1024 0x4025343: std::io::stdio::_print (in /home/rye/code/rust/hello_world/matching)
+     n1: 1024 0x4008BFF: matching::main (in /home/rye/code/rust/hello_world/matching)
+      n1: 1024 0x4007CA2: core::ops::function::FnOnce::call_once (in /home/rye/code/rust/hello_world/matching)
+       n1: 1024 0x4007B85: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rye/code/rust/hello_world/matching)
+        n1: 1024 0x4007B68: std::rt::lang_start::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+         n1: 1024 0x402364F: std::rt::lang_start_internal (in /home/rye/code/rust/hello_world/matching)
+          n1: 1024 0x4007B50: std::rt::lang_start (in /home/rye/code/rust/hello_world/matching)
+           n0: 1024 0x4008F04: main (in /home/rye/code/rust/hello_world/matching)
+ n1: 512 0x493771B: ??? (in /usr/lib/libgcc_s.so.1)
+  n2: 512 0x4937BF1: ??? (in /usr/lib/libgcc_s.so.1)
+   n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+    n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+   n1: 256 0x49393C9: __register_frame_info_bases (in /usr/lib/libgcc_s.so.1)
+    n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+     n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+ n1: 160 0x400801B: alloc::alloc::alloc (in /home/rye/code/rust/hello_world/matching)
+  n1: 160 0x40080B5: alloc::alloc::Global::alloc_impl (in /home/rye/code/rust/hello_world/matching)
+   n3: 160 0x4007F92: alloc::alloc::exchange_malloc (in /home/rye/code/rust/hello_world/matching)
+    n2: 128 0x40085FB: matching::append (in /home/rye/code/rust/hello_world/matching)
+     n2: 96 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+      n2: 64 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+       n2: 48 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+        n1: 32 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+         n0: 32 in 2 places, all below massif's threshold (1.00%)
+        n0: 16 in 2 places, all below massif's threshold (1.00%)
+       n0: 16 in 2 places, all below massif's threshold (1.00%)
+      n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 32 in 2 places, all below massif's threshold (1.00%)
+    n1: 32 0x4008390: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+     n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+      n0: 32 in 2 places, all below massif's threshold (1.00%)
+    n0: 0 in 8 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=294990
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=295319
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=295648
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=295977
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=296306
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1696 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x4027D71: std::sync::poison::once::Once::call_once_force::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+  n1: 1024 0x4006AB3: std::sys::sync::once::futex::Once::call (in /home/rye/code/rust/hello_world/matching)
+   n1: 1024 0x4006561: std::sync::once_lock::OnceLock<T>::initialize (in /home/rye/code/rust/hello_world/matching)
+    n1: 1024 0x4025343: std::io::stdio::_print (in /home/rye/code/rust/hello_world/matching)
+     n1: 1024 0x4008BFF: matching::main (in /home/rye/code/rust/hello_world/matching)
+      n1: 1024 0x4007CA2: core::ops::function::FnOnce::call_once (in /home/rye/code/rust/hello_world/matching)
+       n1: 1024 0x4007B85: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rye/code/rust/hello_world/matching)
+        n1: 1024 0x4007B68: std::rt::lang_start::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+         n1: 1024 0x402364F: std::rt::lang_start_internal (in /home/rye/code/rust/hello_world/matching)
+          n1: 1024 0x4007B50: std::rt::lang_start (in /home/rye/code/rust/hello_world/matching)
+           n0: 1024 0x4008F04: main (in /home/rye/code/rust/hello_world/matching)
+ n1: 512 0x493771B: ??? (in /usr/lib/libgcc_s.so.1)
+  n2: 512 0x4937BF1: ??? (in /usr/lib/libgcc_s.so.1)
+   n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+    n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+   n1: 256 0x49393C9: __register_frame_info_bases (in /usr/lib/libgcc_s.so.1)
+    n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+     n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+ n1: 160 0x400801B: alloc::alloc::alloc (in /home/rye/code/rust/hello_world/matching)
+  n1: 160 0x40080B5: alloc::alloc::Global::alloc_impl (in /home/rye/code/rust/hello_world/matching)
+   n2: 160 0x4007F92: alloc::alloc::exchange_malloc (in /home/rye/code/rust/hello_world/matching)
+    n3: 144 0x40085FB: matching::append (in /home/rye/code/rust/hello_world/matching)
+     n2: 96 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+      n2: 64 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+       n2: 48 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+        n1: 32 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+         n0: 32 in 2 places, all below massif's threshold (1.00%)
+        n0: 16 in 2 places, all below massif's threshold (1.00%)
+       n0: 16 in 2 places, all below massif's threshold (1.00%)
+      n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n1: 32 0x4008447: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+      n1: 32 0x4008335: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+       n0: 32 in 2 places, all below massif's threshold (1.00%)
+     n0: 16 in 1 place, below massif's threshold (1.00%)
+    n0: 16 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=40
+#-----------
+time=296749
+mem_heap_B=1680
+mem_heap_extra_B=96
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=297233
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=297562
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=297891
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=298220
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1696 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1024 0x4027D71: std::sync::poison::once::Once::call_once_force::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+  n1: 1024 0x4006AB3: std::sys::sync::once::futex::Once::call (in /home/rye/code/rust/hello_world/matching)
+   n1: 1024 0x4006561: std::sync::once_lock::OnceLock<T>::initialize (in /home/rye/code/rust/hello_world/matching)
+    n1: 1024 0x4025343: std::io::stdio::_print (in /home/rye/code/rust/hello_world/matching)
+     n1: 1024 0x4008BFF: matching::main (in /home/rye/code/rust/hello_world/matching)
+      n1: 1024 0x4007CA2: core::ops::function::FnOnce::call_once (in /home/rye/code/rust/hello_world/matching)
+       n1: 1024 0x4007B85: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rye/code/rust/hello_world/matching)
+        n1: 1024 0x4007B68: std::rt::lang_start::{{closure}} (in /home/rye/code/rust/hello_world/matching)
+         n1: 1024 0x402364F: std::rt::lang_start_internal (in /home/rye/code/rust/hello_world/matching)
+          n1: 1024 0x4007B50: std::rt::lang_start (in /home/rye/code/rust/hello_world/matching)
+           n0: 1024 0x4008F04: main (in /home/rye/code/rust/hello_world/matching)
+ n1: 512 0x493771B: ??? (in /usr/lib/libgcc_s.so.1)
+  n2: 512 0x4937BF1: ??? (in /usr/lib/libgcc_s.so.1)
+   n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+    n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+   n1: 256 0x49393C9: __register_frame_info_bases (in /usr/lib/libgcc_s.so.1)
+    n1: 256 0x4902121: ??? (in /usr/libexec/valgrind/vgpreload_core-amd64-linux.so)
+     n0: 256 0x4092E0F: ??? (in /lib/ld-musl-x86_64.so.1)
+ n1: 160 0x400801B: alloc::alloc::alloc (in /home/rye/code/rust/hello_world/matching)
+  n1: 160 0x40080B5: alloc::alloc::Global::alloc_impl (in /home/rye/code/rust/hello_world/matching)
+   n2: 160 0x4007F92: alloc::alloc::exchange_malloc (in /home/rye/code/rust/hello_world/matching)
+    n2: 144 0x40085FB: matching::append (in /home/rye/code/rust/hello_world/matching)
+     n2: 112 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+      n2: 96 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+       n3: 80 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+        n2: 48 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+         n1: 32 0x40085A7: matching::append (in /home/rye/code/rust/hello_world/matching)
+          n0: 32 in 2 places, all below massif's threshold (1.00%)
+         n0: 16 in 1 place, below massif's threshold (1.00%)
+        n1: 32 0x4008447: matching::reverse (in /home/rye/code/rust/hello_world/matching)
+         n0: 32 in 2 places, all below massif's threshold (1.00%)
+        n0: 0 in 1 place, below massif's threshold (1.00%)
+       n0: 16 in 2 places, all below massif's threshold (1.00%)
+      n0: 16 in 2 places, all below massif's threshold (1.00%)
+     n0: 32 in 2 places, all below massif's threshold (1.00%)
+    n0: 16 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=45
+#-----------
+time=298549
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=298878
+mem_heap_B=1696
+mem_heap_extra_B=104
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=299485
+mem_heap_B=1664
+mem_heap_extra_B=88
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=307557
+mem_heap_B=1648
+mem_heap_extra_B=80
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=308102
+mem_heap_B=1568
+mem_heap_extra_B=40
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=308517
+mem_heap_B=512
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=371274
+mem_heap_B=256
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
