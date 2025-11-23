@@ -1,3 +1,4 @@
+use std::fmt;
 
 #[derive(Debug)]
 pub enum List<T> {
@@ -6,6 +7,14 @@ pub enum List<T> {
     // Cons(T,Box<Self>)
 }
 
+impl<T: fmt::Display> fmt::Display for List<T> {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match *self {
+            List::Nil => write!(f, "()"),
+            List::Xs(ref x, ref xs) => write!(f, "({} {})", x, xs),  
+        }
+    }
+}
 
 fn reverse<T>(l: List<T>) -> List<T> {
     match l {
@@ -47,17 +56,15 @@ fn foldl<T, U, F: Fn(&T, &U) -> U>(l: &List<T>, init: U, acc: F) -> U {
     }
 }
 
-/*
-fn foldr<T, U, F: FnMut(T,U) -> U>(l: List<T>, init: U, acc: F) -> U {
+fn foldr<T, U, F: Fn(&T,&U) -> U>(l: &List<T>, init: U, acc: &F) -> U {
     match l {
         List::Nil => init,
-        List::Xs(x,xs) => acc(x,foldr(*xs,init,acc))
+        List::Xs(x,xs) => acc(x,&foldr(xs,init,&acc))
     }
 }
-*/
 
-fn sum(add: &u8, adder: &u8) -> u8 {
-    return add + adder;
+fn sum(adder: &u8, addend: &u8) -> u8 {
+    return adder + addend;
 }
 
 fn main() {
@@ -74,20 +81,20 @@ fn main() {
                 Box::new(List::Nil))))))));
 
 
-    println!("{:?}",l);
-    println!("{:?}",k);
+    println!("{}",l);
+    println!("{}",k);
     
     l = append(l,k);
-    println!("{:?}",l);
+    println!("{}",l);
     l = reverse(l);
-    println!("{:?}",l);
+    println!("{}",l);
     let end = tail(&l).unwrap();
     println!("{}",end);
 
     let total = foldl(&l,0,sum);
     println!("{}",total);
 
-    println!("{:?}",l);
+    println!("{}",l);
 
 }
 
