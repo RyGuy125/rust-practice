@@ -130,7 +130,6 @@ fn main() {
     println!("cdr: {}",cdr(&l).unwrap());
     println!("length: {}",length(&l));
     println!("{}",l);
-    println!("finding 10: {}",find(&l,10u8));
 
     let z : List<u8> = make_list(20usize, 67u8);
     println!("{}",z);
