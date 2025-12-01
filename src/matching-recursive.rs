@@ -36,13 +36,6 @@ fn length<T>(l: &List<T>) -> usize {
     }
 }
 
-fn find<T>(l: &List<T>, val: &T) -> usize {
-    match l {
-        List::Nil => usize::MAX,
-        List::Cons(x,_) if x == val => 0usize,
-        List::Cons(_,xs) => 1usize + find(xs,val, comp)
-    }
-}
 
 fn make_list<T: Copy>(size: usize, elem: T) -> List<T> {
     match size {
@@ -136,7 +129,8 @@ fn main() {
     println!("car: {}",car(&l).unwrap());
     println!("cdr: {}",cdr(&l).unwrap());
     println!("length: {}",length(&l));
-    println!("finding 10: {}",find(&l,&10u8));
+    println!("{}",l);
+    println!("finding 10: {}",find(&l,10u8));
 
     let z : List<u8> = make_list(20usize, 67u8);
     println!("{}",z);
