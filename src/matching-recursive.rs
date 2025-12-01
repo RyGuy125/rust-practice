@@ -91,6 +91,19 @@ fn foldr<T, U, F: Fn(&T,&U) -> U>(l: &List<T>, init: U, acc: &F) -> U {
     }
 }
 
+fn find<T, F: Fn(&T,&T)-> bool>(l : &List<T>, elem: &T, comp: &F) -> usize {
+    match l {
+        List::Nil => usize::MAX,
+        List::Cons(x,_) if comp(x,elem) => 0usize,
+        List::Cons(_,xs) => 1usize + find(xs,elem,comp)
+    }
+}
+
+fn equals(x: &u8, y: &u8) -> bool {
+    return x == y;
+}
+
+
 fn sum(adder: &u8, addend: &u8) -> u8 {
     return adder + addend;
 }
@@ -133,5 +146,7 @@ fn main() {
 
     let z : List<u8> = make_list(20usize, 67u8);
     println!("{}",z);
+
+    println!("{}",find(&l,&2u8,&equals));
 }
 
