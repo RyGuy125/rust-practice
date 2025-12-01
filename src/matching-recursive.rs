@@ -99,6 +99,17 @@ fn find<T, F: Fn(&T,&T)-> bool>(l : &List<T>, elem: &T, comp: &F) -> usize {
     }
 }
 
+fn index<T>(l: &List<T>, idx: usize) -> Option<&T> {
+    match idx {
+        0 => car(&l),
+        _ => match l {
+            List::Nil => None,
+            List::Cons(_,xs) => index(xs,idx-1)
+        }
+    }
+    
+}
+
 fn equals(x: &u8, y: &u8) -> bool {
     return x == y;
 }
@@ -122,31 +133,37 @@ fn main() {
                 Box::new(List::Nil))))))));
 
 
-    println!("{}",l);
-    println!("{}",k);
+    println!("l: {}",l);
+    println!("k: {}",k);
     
     l = append(l,k);
-    println!("{}",l);
+    println!("l appended with k: {}",l);
     l = reverse(l);
-    println!("{}",l);
+    println!("l reversed: {}",l);
     let end = tail(&l).unwrap();
-    println!("{}",end);
+    println!("last element of l: {}",end);
 
     let total = foldl(&l,0,sum);
-    println!("{}",total);
+    println!("sum of l: {}",total);
     l = map(&l, |x: &u8| -> u8 {x + 1});
-    println!("{}",foldr(&l,0,&sum));
+    println!("sum of l after +1 mapping: {}",foldr(&l,0,&sum));
     
-    println!("{}",l);
+    println!("l: {}",l);
 
     println!("car: {}",car(&l).unwrap());
     println!("cdr: {}",cdr(&l).unwrap());
     println!("length: {}",length(&l));
-    println!("{}",l);
+    println!("l: {}",l);
 
     let z : List<u8> = make_list(20usize, 67u8);
-    println!("{}",z);
+    println!("Made list:\n{}",z);
 
-    println!("{}",find(&l,&2u8,&equals));
+    println!("Finding 2u8: {}",find(&l,&2u8,&equals));
+
+    println!("Retrieving 8 from its index: {}",index(&l,find(&l,&8u8,&equals)).unwrap());
+
+    let long_list: List<u32> = make_list(10000usize,u32::MAX);
+    // let long_list: List<u32> = make_list(100000usize,u32::MAX); // crashes -> stack overflow
+    println!("long list:\n{}",long_list);
 }
 
