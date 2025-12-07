@@ -1,6 +1,5 @@
 use std::fmt;
 
-// #[derive(Debug)]
 pub enum List<T> {
     Nil,
     Cons(T,Box<Self>)
