@@ -1,4 +1,4 @@
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 use std::ops;
 use uuid::Uuid;
 use std::hash::{Hash, Hasher};
@@ -100,14 +100,20 @@ class Value:
             node._backward()
 */
 
-pub struct Value {
-    id: Uuid, // UUIDv4
+type ValueId = Uuid;
+
+struct Value {
+    id: ValueId,
     data: f32,
     grad: f32,
     //_backward: Box<dyn FnMut(&Value,&Value,&Value)>,
-    _prev: HashSet<Value>,
+    _prev: HashSet<ValueId>,
     _op: char,
     _label: String,
+}
+
+struct Graph {
+    values: HashMap<ValueId, Value>
 }
 
 impl Default for Value {
@@ -149,11 +155,11 @@ impl fmt::Display for Value {
     }
 }
 
-impl ops::Add<Value> for Value {
+impl<'a, 'b> ops::Add<&'b Value> for &'a Value {
     type Output = Value;
     
 
-    fn add(self, mut _rhs: Value) -> Value {
+    fn add(self, _rhs: &'b Value) -> Value {
         
         //let backward = |mut s : &Value, mut other: &Value, out: &Value| {
         //        s.grad += 1.0f32 * out.grad;
@@ -163,7 +169,7 @@ impl ops::Add<Value> for Value {
         let out = Value {
             id: Uuid::new_v4(),
             data: self.data + _rhs.data,
-            _prev: HashSet::from([self,_rhs]),
+            _prev: HashSet::from([self.id,_rhs.id]),
             _op: '+',
             grad: 0.0f32,
             //_backward: backward,
@@ -177,10 +183,11 @@ impl ops::Add<Value> for Value {
 fn main() {
     let a = Value{_label:"a".to_string(), data:3.0f32, ..Default::default()};
     let b = Value{_label:"b".to_string(), data:4.0f32, ..Default::default()};
-    let c = a + b;
+    let c = &a + &b;
     // c._backward()
 
     println!("{}",a);
     println!("{}",b);
-    println!("{}", a+b);
+    println!("{}", c);
+    println!("{}", &a+&b);
 }
