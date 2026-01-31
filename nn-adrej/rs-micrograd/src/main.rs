@@ -106,7 +106,7 @@ struct Value {
     id: ValueId,
     data: f32,
     grad: f32,
-    //_backward: Box<dyn FnMut(&Value,&Value,&Value)>,
+    _backward: Box<dyn Fn(&mut Value, &mut Value, &Value)>,
     _prev: HashSet<ValueId>,
     _op: char,
     _label: String,
@@ -116,13 +116,14 @@ struct Graph {
     values: HashMap<ValueId, Value>
 }
 
+// Default values so I don't need to provide everything
 impl Default for Value {
     fn default() -> Value {
         Value {
             id: Uuid::new_v4(),
             data: 0f32,
             grad: 0f32,
-            //_backward: Box::new(|_a,_b,_c| {}),
+            _backward: Box::new(|_a,_b,_c| {}),
             _prev: HashSet::new(),
             _op: '_',
             _label: String::from("")
@@ -130,12 +131,19 @@ impl Default for Value {
     }
 }
 
-// impl Value {
-//     fn new(id: Uuid, data: f32, grad: f32, _backward: fn(Value,Value,Value), _prev: HashSet<Value>, _op: char, label: String) -> Self {
-//         Self { id, data, grad, _backward, _prev, _op, label}
-//     }
-// }
+// New Value (on the heap?)
+impl Value {
+    fn new(data: f32,  _children: HashSet<ValueId>, op: char) -> Value {
+        Self {
+            data:data,
+            _prev:_children, 
+            _op:op, 
+            ..Default::default()
+        }
+    }
+}
 
+// How to compare Values
 impl PartialEq for Value {
     fn eq(&self, other: &Self) -> bool {
         self.data == other.data
@@ -143,51 +151,61 @@ impl PartialEq for Value {
 }
 impl Eq for Value {}
 
+// How to hash Value
 impl Hash for Value {
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.id.hash(state);
     }
 }
 
+// Specify how to print Value
 impl fmt::Display for Value {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "(data={} : grad={})",self.data,self.grad)
     }
 }
 
+// Addition op overload
 impl<'a, 'b> ops::Add<&'b Value> for &'a Value {
     type Output = Value;
     
-
     fn add(self, _rhs: &'b Value) -> Value {
         
-        //let backward = |mut s : &Value, mut other: &Value, out: &Value| {
-        //        s.grad += 1.0f32 * out.grad;
-        //        other.grad += 1.0f32 * out.grad;
-        //};
-
-        let out = Value {
-            id: Uuid::new_v4(),
-            data: self.data + _rhs.data,
-            _prev: HashSet::from([self.id,_rhs.id]),
-            _op: '+',
-            grad: 0.0f32,
-            //_backward: backward,
-            _label: String::from("")
+                // let backward = |s : &mut Value, other: &mut Value, out: &mut Value| {
+        // let backward = |out : &Value| {
+        //         out._children
+        //         s.grad += 1.0f32 * out.grad;
+        //         other.grad += 1.0f32 * out.grad;
+        // };
+        let mut out = Value::new(
+            self.data + _rhs.data,
+            HashSet::from([self.id,_rhs.id]),
+            '+'
+        );
+        let backward = |s: &mut Value, other: &mut Value, out: &Value| {
+            s.grad += 1.0f32 * out.grad;
+            other.grad += 1.0f32 * out.grad;
         };
+        out._backward = Box::new(backward);
         out
     }
 }
 
 
 fn main() {
-    let a = Value{_label:"a".to_string(), data:3.0f32, ..Default::default()};
-    let b = Value{_label:"b".to_string(), data:4.0f32, ..Default::default()};
-    let c = &a + &b;
-    // c._backward()
+
+
+    let mut a = Value{_label:"a".to_string(), data:3.0f32, ..Default::default()}; 
+    let mut b = Value{_label:"b".to_string(), data:4.0f32, ..Default::default()};
+    let mut c = &a + &b;
+    
 
     println!("{}",a);
     println!("{}",b);
     println!("{}", c);
     println!("{}", &a+&b);
+
+    c.grad = 1f32;
+    (c._backward)(&mut a, &mut b, &c);
+    println!("{} | {} | {}", a, b, c);
 }
