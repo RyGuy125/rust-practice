@@ -153,10 +153,10 @@ impl ValueOps for Rc<Value> {
     fn pow(&self, rhs: f32) -> Rc<Value> {
         let backward = move |other: f32| {
             let back = |s: &Rc<Value>| {
-                for v in &s._prev {
-                    let child = v.weak.upgrade().unwrap();
-                    child.grad.set(child.grad.get() + other * child.data.powf(other-1.0) * s.grad.get());
-                }
+                // for v in &s._prev {
+                //     let child = v.weak.upgrade().unwrap();
+                //     child.grad.set(child.grad.get() + other * child.data.powf(other-1.0) * s.grad.get());
+                // }
             };
             back
         };
