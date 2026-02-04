@@ -1,1 +1,1 @@
-/workspaces/rust-practice/nn-adrej/rs-micrograd/target/debug/rs-micrograd: /workspaces/rust-practice/nn-adrej/rs-micrograd/src/main.rs /workspaces/rust-practice/nn-adrej/rs-micrograd/src/node.rs
+C:\Users\imrya\OneDrive\Documents\Code\Rust\micrograd\rust-practice\nn-adrej\rs-micrograd\target\debug\rs-micrograd.exe: C:\Users\imrya\OneDrive\Documents\Code\Rust\micrograd\rust-practice\nn-adrej\rs-micrograd\src\main.rs C:\Users\imrya\OneDrive\Documents\Code\Rust\micrograd\rust-practice\nn-adrej\rs-micrograd\src\node.rs
