@@ -9,7 +9,7 @@ pub type NodeRef = Rc<Node>;
 pub struct Node {
     data: Cell<f32>,
     pub grad: Cell<f32>,
-    parents: Vec<Weak<Node>>,
+    pub parents: Vec<Weak<Node>>,
     _backward: RefCell<Option<Box<dyn Fn()>>>, 
 }
 

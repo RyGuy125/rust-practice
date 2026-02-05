@@ -11,7 +11,6 @@ fn test_node() {
     let w1 = Node::new(-3.0);
     let w2 = Node::new(1.0);
     
-
     let b = Node::new(6.8813735870195432);
 
     // x1*w1 + x2*w2 + b
@@ -104,50 +103,50 @@ fn test_sub() {
 
 #[test]
 fn test_div() {
-    let p = node::Node::new(10.0);
-    let q = node::Node::new(5.0);
-    let r = node::Node::div(&p,&q);
+    let p = Node::new(10.0);
+    let q = Node::new(5.0);
+    let r = Node::div(&p,&q);
+    println!("{:?}",r.parents);
     println!("{} | {} | {}",p,q,r);
+    for p in &r.parents {
+        println!("Waiting to see this parent: {}",p.upgrade().unwrap());
+    }
+
     r.backward();
     println!("{} | {} | {}",p,q,r);
-
+    for p in &r.parents {
+        println!("Waiting to see this parent: {}",p.upgrade().unwrap());
+    }
     assert_eq!(p.grad.get(),0.2);
     assert_eq!(q.grad.get(),-0.4);
 }
 
+// #[test]
+// fn test_parents() {
+//     let p = Node::new(10.0);
+//     let q = Node::new(5.0);
+//     let r = Node::div(&p,&q);
+//     println!("{} | {} | {}",p,q,r);
+//     r.backward();
+//     println!("{} | {} | {}",p,q,r);
+
+
+// }
+
 fn main() {
 
-    
-    /*
-
-    // let x = neuron::Neuron::new(3);
-    // println!("{}", x);
-    // let act = x.call(&[2.0,3.0,1.0]);
-    // println!("{}", act);
-
-    // let z = layer::Layer::new(2,3);
-    // let ns = z.call(5.0);
-
-    // let x = [2.0,3.0,-1.0];
-    // let mlp = mlp::MLP::new(3,&[4,4,1]);
-    // let res = mlp.call(&x);
-    // for i in res {
-    //     println!("{}",i);
-    // }
-
-    // let xs= vec![
-    //     vec![2.0, 3.0, -1.0],
-    //     vec![3.0, -1.0, 0.5],
-    //     vec![0.5, 1.0, 1.0],
-    //     vec![1.0, 1.0, -1.0],
-    // ];
-    // let ys = vec![
-    //     node::Node::new(1.0), 
-    //     node::Node::new(-1.0), 
-    //     node::Node::new(-1.0), 
-    //     node::Node::new(1.0)
-    // ];
-    // let mut loss = node::Node::new(0.0); 
-    // mlp.learn(xs,ys,20,&mut loss);
-    */
+    let x = Node::new(4.0);
+    let mut outer_sum = None;
+    {
+        let y = Node::new(5.0);
+        outer_sum = Some(Node::add(&x,&y));
+        for p in &outer_sum.clone().unwrap().parents {
+            println!("Waiting to see this parent: {}",p.upgrade().unwrap());
+        }
+    }
+    // y falls out of scope here
+    println!("{}",outer_sum.clone().unwrap());
+    for p in &outer_sum.unwrap().parents {
+        println!("Waiting to see this parent: {}",p.upgrade().unwrap());
+    }
 }
